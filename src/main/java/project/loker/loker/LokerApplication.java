@@ -1,37 +1,37 @@
 package project.loker.loker;
 
-import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.boot.CommandLineRunner;
+// import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import project.loker.loker.model.Role;
-import project.loker.loker.repository.RoleRepository;
+// import project.loker.loker.model.Role;
+// import project.loker.loker.repository.RoleRepository;
 
 @SpringBootApplication
-public class LokerApplication implements CommandLineRunner {
+public class LokerApplication {
 
 	
-	@Autowired
-	private RoleRepository roleRepository ;
+	// @Autowired
+	// private RoleRepository roleRepository ;
 
 	public static void main(String[] args) {
 		SpringApplication.run(LokerApplication.class, args);
 	}
-	@Override
-	public void run(String... args) throws Exception {
+// 	@Override
+// 	public void run(String... args) throws Exception {
 		
-		System.out.println("Creating Roles object: roleAdmin");
+// 		System.out.println("Creating Roles object: roleAdmin");
 	
-		Role role= new Role();
-		role.setName("ROLE_ADMIN");
+// 		Role role= new Role();
+// 		role.setName("ROLE_ADMIN");
 		
-		System.out.println("roleAdmin created.");
+// 		System.out.println("roleAdmin created.");
 
-		this.roleRepository.save(role);
+// 		this.roleRepository.save(role);
 
-}
+// }
 
 
 }
