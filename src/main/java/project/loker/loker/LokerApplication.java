@@ -22,9 +22,13 @@ public class LokerApplication implements CommandLineRunner {
 		
 		System.out.println("Creating Roles object: roleAdmin");
 		Role role= new Role();
-		roleRepository.setName("ROLE_ADMIN");
+		roleAdmin.setName("ROLE_ADMIN");
 		
 		System.out.println("roleAdmin created.");
+
+		this.roleRepository.save(roleAdmin);
+
 }
+
 
 }
