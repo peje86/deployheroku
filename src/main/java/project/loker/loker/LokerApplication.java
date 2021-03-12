@@ -1,5 +1,7 @@
 package project.loker.loker;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,12 +23,13 @@ public class LokerApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		
 		System.out.println("Creating Roles object: roleAdmin");
+	
 		Role role= new Role();
-		roleAdmin.setName("ROLE_ADMIN");
+		role.setName("ROLE_ADMIN");
 		
 		System.out.println("roleAdmin created.");
 
-		this.roleRepository.save(roleAdmin);
+		this.roleRepository.save(role);
 
 }
 
