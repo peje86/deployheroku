@@ -52,7 +52,7 @@ public void setCities(Cities cities) {
 
     //setter
 //id satuan
-@NotBlank
+// @NotBlank
 private Long id_city;
 
 public Long getIdCity() {
@@ -65,7 +65,7 @@ public Long getIdCity() {
 
 
 
-    // many to one ke kategory
+//     // many to one ke kategory
 
     @ManyToOne(optional=false)
     @JoinColumn(name = "id_kategori", referencedColumnName="id", insertable = false, updatable = false)
@@ -80,7 +80,7 @@ public void setKategories(Kategories kategories) {
 
     //setter
 //id kategorie
-@NotBlank
+// @NotBlank
 private Long id_kategori;
 
 public Long getIdKategori() {
@@ -109,7 +109,7 @@ public void setBidangPerusahaan(BidangPerusahaan bidangPerusahaan) {
 
     //setter
 //id satuan
-@NotBlank
+// @NotBlank
 private Long id_bidang;
 
 public Long getIdBidang() {
@@ -142,7 +142,7 @@ public void setUser(User user) {
 
     //setter
 //id satuan
-@NotBlank
+
 private Long id_user;
 
 public Long getIdUser() {
