@@ -194,7 +194,7 @@ public User replaceUser(@RequestBody User newUser, @PathVariable Long id){
 public Kategories replaceKategories(@RequestBody Kategories newKategories, @PathVariable Long id){
     return kategoryRepository.findById(id)
     .map(kategories->{
-        kategories.setName(newKategories.getName());
+        kategories.setNamaKategori(newKategories.getNamaKategori());
         kategories.setId(newKategories.getId());
         return kategoryRepository.save(newKategories);
     }).orElseGet(()->{
