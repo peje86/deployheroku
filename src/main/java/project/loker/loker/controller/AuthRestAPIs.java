@@ -41,10 +41,12 @@ import project.loker.loker.model.RoleName;
 import project.loker.loker.model.User;
 import project.loker.loker.model.Lokers;
 import project.loker.loker.model.Perusahaans;
+import project.loker.loker.model.Kategories;
 import project.loker.loker.repository.RoleRepository;
 import project.loker.loker.repository.UserRepository;
 import project.loker.loker.repository.LokerRepository;
 import project.loker.loker.repository.PerusahaanRepository;
+import project.loker.loker.repository.KategoryRepository;
 import project.loker.loker.security.jwt.JwtProvider;
 import project.loker.loker.security.services.UserPrinciple;
 
@@ -68,6 +70,9 @@ public class AuthRestAPIs {
 
     @Autowired
     PerusahaanRepository perusahaanRepository;
+
+    @Autowired
+    KategoryRepository kategoryRepository;
  
     @Autowired
     PasswordEncoder encoder;
@@ -179,6 +184,25 @@ public User replaceUser(@RequestBody User newUser, @PathVariable Long id){
     
 }
 
+
+//rubah all data
+
+//rubah kategory
+
+@PutMapping("/kategory/{id}")//tipe biomahasisa
+@PreAuthorize(" hasRole('USERB') or hasRole('ADMIN')")
+public Kategories replaceKategories(@RequestBody Kategories newKategories, @PathVariable Long id){
+    return kategoryRepository.findById(id)
+    .map(kategories->{
+        kategories.setName(newKategories.getName());
+        kategories.setId(newKategories.getId());
+        return kategoryRepository.save(newKategories);
+    }).orElseGet(()->{
+        newKategories.setId(id);
+        return kategoryRepository.save(newKategories);
+    });
+    
+}
 
 
 
