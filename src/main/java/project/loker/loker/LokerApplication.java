@@ -18,7 +18,7 @@
 
 ////////////////////////////////////////////////////////////////////////////
 
-untuk input role di database postgres heroku
+// untuk input role di database postgres heroku
 
 package project.loker.loker;
 
