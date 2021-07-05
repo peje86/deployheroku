@@ -43,7 +43,7 @@ public class LokerApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 	    String sql = "INSERT INTO roles (name) VALUES ("
-	            + "'ROLE_USERA')";
+	            + "'ROLE_USERB')";
 		 
 	    int rows = jdbcTemplate.update(sql);
 	    if (rows > 0) {
